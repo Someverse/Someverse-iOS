@@ -24,15 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4DCA0A402ED640310025F3F1 /* someverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = someverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DCA0A522ED640320025F3F1 /* someverseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = someverseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DCA0A5C2ED640320025F3F1 /* someverseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = someverseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCA0A402ED640310025F3F1 /* Someverse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Someverse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCA0A522ED640320025F3F1 /* SomeverseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomeverseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCA0A5C2ED640320025F3F1 /* SomeverseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SomeverseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4DCA0A422ED640310025F3F1 /* someverse */ = {
+		4DCA0A422ED640310025F3F1 /* Someverse */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = someverse;
+			path = Someverse;
 			sourceTree = "<group>";
 		};
 		4DCA0A552ED640320025F3F1 /* someverseTests */ = {
@@ -75,7 +75,7 @@
 		4DCA0A372ED640310025F3F1 = {
 			isa = PBXGroup;
 			children = (
-				4DCA0A422ED640310025F3F1 /* someverse */,
+				4DCA0A422ED640310025F3F1 /* Someverse */,
 				4DCA0A552ED640320025F3F1 /* someverseTests */,
 				4DCA0A5F2ED640320025F3F1 /* someverseUITests */,
 				4DCA0A412ED640310025F3F1 /* Products */,
@@ -85,9 +85,9 @@
 		4DCA0A412ED640310025F3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DCA0A402ED640310025F3F1 /* someverse.app */,
-				4DCA0A522ED640320025F3F1 /* someverseTests.xctest */,
-				4DCA0A5C2ED640320025F3F1 /* someverseUITests.xctest */,
+				4DCA0A402ED640310025F3F1 /* Someverse.app */,
+				4DCA0A522ED640320025F3F1 /* SomeverseTests.xctest */,
+				4DCA0A5C2ED640320025F3F1 /* SomeverseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4DCA0A3F2ED640310025F3F1 /* someverse */ = {
+		4DCA0A3F2ED640310025F3F1 /* Someverse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DCA0A662ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverse" */;
+			buildConfigurationList = 4DCA0A662ED640320025F3F1 /* Build configuration list for PBXNativeTarget "Someverse" */;
 			buildPhases = (
 				4DCA0A3C2ED640310025F3F1 /* Sources */,
 				4DCA0A3D2ED640310025F3F1 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4DCA0A422ED640310025F3F1 /* someverse */,
+				4DCA0A422ED640310025F3F1 /* Someverse */,
 			);
-			name = someverse;
+			name = Someverse;
 			packageProductDependencies = (
 			);
 			productName = someverse;
-			productReference = 4DCA0A402ED640310025F3F1 /* someverse.app */;
+			productReference = 4DCA0A402ED640310025F3F1 /* Someverse.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4DCA0A512ED640320025F3F1 /* someverseTests */ = {
+		4DCA0A512ED640320025F3F1 /* SomeverseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DCA0A692ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverseTests" */;
+			buildConfigurationList = 4DCA0A692ED640320025F3F1 /* Build configuration list for PBXNativeTarget "SomeverseTests" */;
 			buildPhases = (
 				4DCA0A4E2ED640320025F3F1 /* Sources */,
 				4DCA0A4F2ED640320025F3F1 /* Frameworks */,
@@ -133,16 +133,16 @@
 			fileSystemSynchronizedGroups = (
 				4DCA0A552ED640320025F3F1 /* someverseTests */,
 			);
-			name = someverseTests;
+			name = SomeverseTests;
 			packageProductDependencies = (
 			);
 			productName = someverseTests;
-			productReference = 4DCA0A522ED640320025F3F1 /* someverseTests.xctest */;
+			productReference = 4DCA0A522ED640320025F3F1 /* SomeverseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4DCA0A5B2ED640320025F3F1 /* someverseUITests */ = {
+		4DCA0A5B2ED640320025F3F1 /* SomeverseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DCA0A6C2ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverseUITests" */;
+			buildConfigurationList = 4DCA0A6C2ED640320025F3F1 /* Build configuration list for PBXNativeTarget "SomeverseUITests" */;
 			buildPhases = (
 				4DCA0A582ED640320025F3F1 /* Sources */,
 				4DCA0A592ED640320025F3F1 /* Frameworks */,
@@ -156,11 +156,11 @@
 			fileSystemSynchronizedGroups = (
 				4DCA0A5F2ED640320025F3F1 /* someverseUITests */,
 			);
-			name = someverseUITests;
+			name = SomeverseUITests;
 			packageProductDependencies = (
 			);
 			productName = someverseUITests;
-			productReference = 4DCA0A5C2ED640320025F3F1 /* someverseUITests.xctest */;
+			productReference = 4DCA0A5C2ED640320025F3F1 /* SomeverseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4DCA0A3B2ED640310025F3F1 /* Build configuration list for PBXProject "someverse" */;
+			buildConfigurationList = 4DCA0A3B2ED640310025F3F1 /* Build configuration list for PBXProject "Someverse" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -200,9 +200,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DCA0A3F2ED640310025F3F1 /* someverse */,
-				4DCA0A512ED640320025F3F1 /* someverseTests */,
-				4DCA0A5B2ED640320025F3F1 /* someverseUITests */,
+				4DCA0A3F2ED640310025F3F1 /* Someverse */,
+				4DCA0A512ED640320025F3F1 /* SomeverseTests */,
+				4DCA0A5B2ED640320025F3F1 /* SomeverseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		4DCA0A542ED640320025F3F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DCA0A3F2ED640310025F3F1 /* someverse */;
+			target = 4DCA0A3F2ED640310025F3F1 /* Someverse */;
 			targetProxy = 4DCA0A532ED640320025F3F1 /* PBXContainerItemProxy */;
 		};
 		4DCA0A5E2ED640320025F3F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DCA0A3F2ED640310025F3F1 /* someverse */;
+			target = 4DCA0A3F2ED640310025F3F1 /* Someverse */;
 			targetProxy = 4DCA0A5D2ED640320025F3F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -397,10 +397,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z388Z4UCTV;
+				DEVELOPMENT_TEAM = R56222NR37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = someverse;
+				INFOPLIST_KEY_CFBundleDisplayName = Someverse;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -412,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kwonws.someverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.someverse.Someverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -435,10 +435,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z388Z4UCTV;
+				DEVELOPMENT_TEAM = R56222NR37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = someverse;
+				INFOPLIST_KEY_CFBundleDisplayName = Someverse;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kwonws.someverse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.someverse.Someverse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -484,7 +484,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/someverse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/someverse";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Someverse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Someverse";
 			};
 			name = Debug;
 		};
@@ -506,7 +506,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/someverse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/someverse";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Someverse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Someverse";
 			};
 			name = Release;
 		};
@@ -553,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4DCA0A3B2ED640310025F3F1 /* Build configuration list for PBXProject "someverse" */ = {
+		4DCA0A3B2ED640310025F3F1 /* Build configuration list for PBXProject "Someverse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DCA0A642ED640320025F3F1 /* Debug */,
@@ -562,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DCA0A662ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverse" */ = {
+		4DCA0A662ED640320025F3F1 /* Build configuration list for PBXNativeTarget "Someverse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DCA0A672ED640320025F3F1 /* Debug */,
@@ -571,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DCA0A692ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverseTests" */ = {
+		4DCA0A692ED640320025F3F1 /* Build configuration list for PBXNativeTarget "SomeverseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DCA0A6A2ED640320025F3F1 /* Debug */,
@@ -580,7 +580,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DCA0A6C2ED640320025F3F1 /* Build configuration list for PBXNativeTarget "someverseUITests" */ = {
+		4DCA0A6C2ED640320025F3F1 /* Build configuration list for PBXNativeTarget "SomeverseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DCA0A6D2ED640320025F3F1 /* Debug */,
