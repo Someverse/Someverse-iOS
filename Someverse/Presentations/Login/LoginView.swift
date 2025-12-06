@@ -6,92 +6,94 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
-    @Environment(\.socialLoginClient.kakaoLogin) private var kakaoLogin
-    @Environment(\.socialLoginClient.appleLogin) private var appleLogin
-    @Environment(\.nicknameClient) private var nicknameClient
-    @State private var navigateToSignUp = false
-    @StateObject private var coordinator = SignInCoordinator()
-
-    var body: some View {
-        NavigationStack(path: $coordinator.path) {
-            VStack(spacing: 0) {
-                Spacer()
-
-                // Login Buttons
-                VStack(spacing: 12) {
-                    SocialLoginButton(type: .kakao) {
-                        Task {
-                            _ = try await kakaoLogin()
-                            navigateToSignUp = true
-                        }
-                    }
-
-                    SocialLoginButton(type: .apple) {
-                        Task {
-                            _ = try await appleLogin()
-                            navigateToSignUp = true
-                        }
-                    }
-                }
-                .padding(.horizontal, 20)
-
-                Spacer()
-                    .frame(height: 24)
-
-                // Footer
-                VStack(spacing: 8) {
-                    Text("사업자 정보 ▶")
-                        .font(.someverseCaption)
-                        .foregroundColor(.someverseTextTertiary)
-
-                    Text("서비스 이용약관, 개인정보 처리방침, 위치정보, 이용약관에\n동의하게 됩니다.")
-                        .font(.someverseCaption)
-                        .foregroundColor(.someverseTextSecondary)
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(2)
-                }
-                .padding(.bottom, 40)
+  @Environment(\.socialLoginClient.kakaoLogin) private var kakaoLogin
+  @Environment(\.socialLoginClient.appleLogin) private var appleLogin
+  @Environment(\.nicknameClient) private var nicknameClient
+  @State private var navigateToSignUp = false
+  @State private var showError = false
+  @State private var errorMessage = ""
+  
+  var body: some View {
+    NavigationStack {
+      VStack(spacing: 0) {
+        Spacer()
+        
+        VStack(spacing: 12) {
+          KakaoLoginButton {
+            Task {
+              do {
+                _ = try await kakaoLogin()
+                navigateToSignUp = true
+              } catch {
+                errorMessage = "카카오 로그인에 실패했습니다."
+                showError = true
+              }
             }
-            .navigationDestination(isPresented: $navigateToSignUp) {
-                NicknameView(viewModel: NicknameViewModel(
-                    validateNickname: nicknameClient.validateNickname,
-                    saveNickname: nicknameClient.saveNickname,
-                    coordinator: coordinator
-                ))
+          }
+          
+          SignInWithAppleButton(.signIn) { request in
+            request.requestedScopes = [.fullName, .email]
+          } onCompletion: { result in
+            switch result {
+            case .success:
+              navigateToSignUp = true
+            case .failure:
+              errorMessage = "애플 로그인에 실패했습니다."
+              showError = true
             }
-            .navigationDestination(for: SignInRoute.self) { route in
-                destinationView(for: route)
-            }
+          }
+          .signInWithAppleButtonStyle(.black)
+          .frame(height: 56)
+          .cornerRadius(12)
         }
+        .padding(.horizontal, 20)
+        
+        Spacer()
+          .frame(height: 24)
+        
+        termsText
+          .padding(.horizontal, 20)
+          .padding(.bottom, 40)
+      }
+      .alert("로그인 실패", isPresented: $showError) {
+        Button("확인", role: .cancel) {}
+      } message: {
+        Text(errorMessage)
+      }
+      .navigationDestination(isPresented: $navigateToSignUp) {
+        SignInView(
+          nicknameViewModel: NicknameViewModel(
+            validateNickname: nicknameClient.validateNickname,
+            saveNickname: nicknameClient.saveNickname
+          )
+        )
+      }
     }
+  }
+}
 
-    @ViewBuilder
-    private func destinationView(for route: SignInRoute) -> some View {
-        switch route {
-        case .nickname:
-            NicknameView(viewModel: NicknameViewModel(
-                validateNickname: nicknameClient.validateNickname,
-                saveNickname: nicknameClient.saveNickname,
-                coordinator: coordinator
-            ))
-        case .gender:
-            GenderView()
-        case .birthday:
-            BirthdayView()
-        case .area:
-            AreaView()
-        case .profileImage:
-            ProfileImageView()
-        case .taste:
-            TasteView()
-        case .approval:
-            ApprovalPendingView()
-        }
+// MARK: - Terms Text
+private extension LoginView {
+  var termsText: some View {
+    VStack(spacing: 4) {
+      Text("로그인함으로써 ") +
+      Text("Somverse").foregroundColor(.someversePrimary) +
+      Text("의")
+      
+      Text("개인 정보 처리방침").foregroundColor(.someverseTextSecondary) +
+      Text(" 및 ") +
+      Text("이용약관").foregroundColor(.someverseTextSecondary) +
+      Text("에 동의합니다.")
     }
+    .font(.someverseCaption)
+    .foregroundColor(.someverseTextPlaceholder)
+    .multilineTextAlignment(.center)
+  }
 }
 
 #Preview {
-    LoginView()
+  LoginView()
 }

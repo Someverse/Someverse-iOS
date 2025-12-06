@@ -14,23 +14,16 @@ struct CTAButton: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundColor(.white)
+                .font(.someverseButton)
+                .foregroundColor(.someverseTextWhite)
                 .frame(maxWidth: .infinity)
                 .frame(height: 56)
                 .background(
                     Group {
                         if isEnabled {
-                            LinearGradient(
-                                gradient: Gradient(colors: [
-                                    Color(red: 119/255, green: 82/255, blue: 254/255),
-                                    Color(red: 255/255, green: 130/255, blue: 171/255)
-                                ]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
+                            LinearGradient.someversePrimary
                         } else {
-                            Color(red: 200/255, green: 200/255, blue: 200/255)
+                            Color.someverseInactive
                         }
                     }
                 )

@@ -10,14 +10,17 @@ import CoreData
 
 @main
 struct SomeverseApp: App {
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            LoginView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environment(\.socialLoginClient, .testValue)
-                .environment(\.nicknameClient, .testValue)
-        }
+  let persistenceController = PersistenceController.shared
+  
+  var body: some Scene {
+    WindowGroup {
+      LoginView()
+      //            MainTabView()
+        .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        .environment(\.socialLoginClient, .testValue)
+        .environment(\.nicknameClient, .testValue)
     }
+  }
 }
+
+
