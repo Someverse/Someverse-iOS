@@ -23,6 +23,10 @@ extension Color {
     // MARK: - Background Colors
     static let someverseBackground = Color(red: 240/255, green: 242/255, blue: 245/255)
     static let someverseBackgroundSecondary = Color(red: 245/255, green: 245/255, blue: 245/255)
+    static let someverseBackgroundWhite = Color.white
+
+    // MARK: - Overlay
+    static let someverseOverlay = Color.black.opacity(0.5)
 
     // MARK: - State Colors
     static let someverseInactive = Color(red: 200/255, green: 200/255, blue: 200/255)
