@@ -48,6 +48,27 @@ extension NicknameClient: EnvironmentKey {
         },
         saveNickname: { _ in }
     )
+
+    /// 실제 네트워크 연동 Client
+    static let liveValue: NicknameClient = NicknameClient(
+        validateNickname: { nickname in
+            let router = UserRouter.validateNickname(nickname: nickname)
+            do {
+                let response = try await NetworkManager.shared.request(
+                    router,
+                    type: NicknameCheckResponse.self
+                )
+                return response.isAvailable ? .valid : .duplicate
+            } catch NetworkError.conflict {
+                return .duplicate
+            } catch {
+                return .invalid
+            }
+        },
+        saveNickname: { _ in
+            // 닉네임 저장은 회원가입 API에서 처리
+        }
+    )
 }
 
 extension EnvironmentValues {
