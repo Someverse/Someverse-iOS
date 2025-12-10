@@ -22,7 +22,7 @@ struct NavigationBar: View {
         HStack {
             if showBackButton, let onBack = onBack {
                 Button(action: onBack) {
-                    Image(systemName: "chevron.left")
+                    Image.iconChevronLeft
                         .font(.someverseIcon)
                         .foregroundColor(.someverseTextTitle)
                 }

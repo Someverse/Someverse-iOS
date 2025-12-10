@@ -8,23 +8,54 @@
 import SwiftUI
 
 struct ChatView: View {
+  @StateObject private var viewModel = ChatViewModel()
+
   var body: some View {
     NavigationStack {
-      VStack {
-        Spacer()
-        Text("채팅")
-          .font(.someverseHeadline)
-          .foregroundColor(.someverseTextTitle)
-        Spacer()
+      VStack(spacing: 0) {
+        TabHeaderView()
+
+        if viewModel.isEmpty {
+          EmptyStateView(
+            infoTitle: "아직 채팅이 없어요",
+            subText: "매칭이 성사되면 채팅을 시작할 수 있어요"
+          )
+        } else {
+          chatListView
+        }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
-      .background(Color.white)
-      .navigationTitle("채팅")
-      .navigationBarTitleDisplayMode(.inline)
+      .background(Color.someverseBackgroundWhite)
+    }
+  }
+
+  // MARK: - Chat List View
+  private var chatListView: some View {
+    ScrollView {
+      LazyVStack(spacing: 0) {
+        if let waiting = viewModel.waitingMembers {
+          WaitingMembersBanner(waiting: waiting) {
+            viewModel.viewWaitingMembers()
+          }
+          .padding(.horizontal, 20)
+          .padding(.bottom, 8)
+        }
+
+        ForEach(viewModel.chatRooms) { room in
+          ChatRoomRow(room: room)
+            .onTapGesture {
+              viewModel.enterChatRoom(room)
+            }
+        }
+      }
     }
   }
 }
 
-#Preview {
+#Preview("Empty") {
+  ChatView()
+}
+
+#Preview("With Data") {
   ChatView()
 }

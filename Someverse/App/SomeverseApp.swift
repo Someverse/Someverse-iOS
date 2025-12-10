@@ -14,8 +14,8 @@ struct SomeverseApp: App {
   
   var body: some Scene {
     WindowGroup {
-      LoginView()
-      //            MainTabView()
+      //      LoginView()
+      MainTabView()
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
         .environment(\.socialLoginClient, .testValue)
         .environment(\.nicknameClient, .testValue)

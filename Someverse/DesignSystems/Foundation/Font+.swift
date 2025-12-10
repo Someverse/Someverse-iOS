@@ -24,6 +24,7 @@ extension Font {
     // MARK: - Caption & Small
     static let someverseCaption = Font.system(size: 12)
     static let someverseSmallBold = Font.system(size: 12, weight: .bold)
+    static let someverseCaptionSmall = Font.system(size: 10)
 
     // MARK: - Chip & Label
     static let someverseChip = Font.system(size: 14, weight: .medium)
@@ -34,6 +35,8 @@ extension Font {
 
     // MARK: - Icon
     static let someverseIcon = Font.system(size: 20)
-    static let someverseIconLarge = Font.system(size: 24)
+    static let someverseIconSmall = Font.system(size: 14)
+    static let someverseIconMedium = Font.system(size: 16)
+    static let someverseIconLarge = Font.system(size: 24, weight: .medium)
     static let someverseIconXLarge = Font.system(size: 48)
 }
