@@ -11,33 +11,18 @@ struct CurationCard: View {
   let title: String
   let chips: [String]
   let onEdit: () -> Void
-  
+
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
-      HStack {
-        Image.iconHeart
-          .foregroundColor(.someversePrimary)
-        
-        Text(title)
-          .font(.someverseBody)
-          .foregroundColor(.someversePrimary)
-        
-        Spacer()
-        
-        Button("편집", action: onEdit)
-          .font(.someverseCaption)
-          .foregroundColor(.someverseTextSecondary)
-      }
-      
+      CardHeaderView(title: title, showEditButton: true, onEdit: onEdit)
+
       FlowLayout(spacing: 8) {
         ForEach(chips, id: \.self) { chip in
           ChipView(text: chip, style: .outline)
         }
       }
     }
-    .padding(16)
-    .background(Color.someverseBackgroundSecondary)
-    .cornerRadius(12)
+    .cardStyle()
   }
 }
 

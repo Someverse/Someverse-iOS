@@ -10,30 +10,17 @@ import SwiftUI
 struct FavoriteWorksCard: View {
   let works: [URL]
   let onEdit: () -> Void
-  
+
   private let placeholderCount = 4
-  
+
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
-      HStack {
-        Image.iconHeart
-          .foregroundColor(.someversePrimary)
-        
-        Text("좋아하는 작품")
-          .font(.someverseBody)
-          .foregroundColor(.someversePrimary)
-        
-        Spacer()
-        
-        Button("편집", action: onEdit)
-          .font(.someverseCaption)
-          .foregroundColor(.someverseTextSecondary)
-      }
-      
+      CardHeaderView(title: "좋아하는 작품", showEditButton: true, onEdit: onEdit)
+
       HStack(spacing: 8) {
         if works.isEmpty {
           ForEach(0..<placeholderCount, id: \.self) { _ in
-            workPlaceholder
+            AspectRatioPlaceholder(aspectRatio: 0.7)
           }
         } else {
           ForEach(works.prefix(placeholderCount), id: \.self) { url in
@@ -42,7 +29,7 @@ struct FavoriteWorksCard: View {
                 .resizable()
                 .scaledToFill()
             } placeholder: {
-              workPlaceholder
+              AspectRatioPlaceholder(aspectRatio: 0.7)
             }
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .aspectRatio(0.7, contentMode: .fit)
@@ -50,15 +37,7 @@ struct FavoriteWorksCard: View {
         }
       }
     }
-    .padding(16)
-    .background(Color.someverseBackgroundSecondary)
-    .cornerRadius(12)
-  }
-  
-  private var workPlaceholder: some View {
-    RoundedRectangle(cornerRadius: 8)
-      .fill(Color.someverseInactive.opacity(0.3))
-      .aspectRatio(0.7, contentMode: .fit)
+    .cardStyle()
   }
 }
 
