@@ -22,6 +22,22 @@ extension SocialLoginClient: EnvironmentKey {
         kakaoLogin: { SocialLoginModel.mock },
         appleLogin: { SocialLoginModel.mock }
     )
+
+    /// 실제 네트워크 연동 Client
+    static let liveValue: SocialLoginClient = SocialLoginClient(
+        kakaoLogin: {
+            let manager = KakaoLoginManager.shared
+            let oauthToken = try await manager.handleKakaoLogin()
+            let response = try await manager.completeLogin(oauthToken: oauthToken)
+            return SocialLoginModel(token: response.accessToken)
+        },
+        appleLogin: {
+            let manager = await AppleLoginManager.shared
+            let result = try await manager.handleAppleLogin()
+            let response = try await manager.completeLogin(idToken: result.idToken, nickname: result.nickname)
+            return SocialLoginModel(token: response.accessToken)
+        }
+    )
 }
 
 extension EnvironmentValues {
